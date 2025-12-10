@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Call N'Barb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a href="#home" class="brand">
+    <img src="Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="brand-logo">
+    <span class="brand-name">Call N'Barb</span>
+  </a>
+  <nav class="nav">
+    <a href="#services">Services</a>
+    <a href="#barbers">Barbers</a>
+    <a href="#book">Book</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#why">Why Call N'Barb</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#book" class="cta">Book Now</a>
+</header>
+
+<main id="home" class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title" data-text="Call N'Barb"></h1>
+    <p class="hero-sub" data-text="Premium on-demand barbing. Anywhere. Anytime."></p>
+    <p class="hero-line">Why keep a bushy hair when you could just book a Call N'Barb.</p>
+    <div class="hero-actions">
+      <a href="#book" class="btn btn-primary">Book A Barber</a>
+      <a href="#services" class="btn btn-outline">Explore Services</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <img src="Screenshot_20251206_215953_Google.jpg" alt="image" style="width: 400px; ">
+  </div>
+</main>
+
+<section id="services" class="section">
+  <div class="section-head">
+    <h2>Services</h2>
+    <p>Sharp fades, clean shaves, luxury grooming, kids cuts, and more.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <div class="card-icon">✂️</div>
+      <h3>Signature Cut</h3>
+      <p>Tailored styles with precision and detail.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🧖🏾‍♂️</div>
+      <h3>Grooming</h3>
+      <p>Beard trim, hot towel, scalp care.</p>
+    </div>
+      <div class="card reveal">
+      <div class="card-icon">👨‍🦱</div>
+      <h3>Dreadlock</h3>
+      <p>Fixing of new Dreadlock and maintaince</p>
+    </div> 
+    <div class="card reveal">
+      <div class="card-icon">👶🏽</div>
+      <h3>Kids</h3>
+      <p>Gentle, stylish cuts for little champs.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🏠</div>
+      <h3>Home Visit</h3>
+      <p>Convenience brought to your door.</p>
+    </div>
+  </div>
+</section>
+
+<section id="barbers" class="section">
+  <div class="section-head">
+    <h2>Barbers</h2>
+    <p>Professionals with proven craft and hospitality.</p>
+  </div>
+  <div class="barbers-grid">
+    <article class="barber-card reveal">
+      <div class="image-slot"></div>
+      <div class="barber-info">
+        <h3>Jordan</h3>
+        <p>Fades, tapers, line-ups</p>
+        <span class="rating">★★★★★</span>
+      </div>
+    </article>
+    <article class="barber-card reveal">
+      <div class="image-slot"></div>
+      <div class="barber-info">
+        <h3>Aisha</h3>
+        <p>Grooming, beard artistry</p>
+        <span class="rating">★★★★★</span>
+      </div>
+    </article>
+    <article class="barber-card reveal">
+      <div class="image-slot"></div>
+      <div class="barber-info">
+        <h3>Diego</h3>
+        <p>Classic cuts, comb-overs</p>
+        <span class="rating">★★★★☆</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="book" class="section">
+  <div class="section-head">
+    <h2>Book A Session</h2>
+    <p>Pick a barber, time, and location. We handle the rest.</p>
+  </div>
+  <form id="bookingForm" class="form">
+    <div class="form-row">
+      <label>Full Name</label>
+      <input type="text" name="name" required placeholder="Your name">
+    </div>
+    <div class="form-row">
+      <label>Phone</label>
+      <input type="tel" name="phone" required placeholder="e.g. +1 555 555 5555">
+    </div>
+    <div class="form-row">
+      <label>Service</label>
+      <select name="service" required>
+        <option value="Signature Cut">Signature Cut</option>
+        <option value="Grooming">Grooming</option>
+        <option value="Kids">Kids</option>
+        <option value="Home Visit">Home Visit</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Barber</label>
+      <select name="barber" required>
+        <option value="Jordan">Jordan</option>
+        <option value="Aisha">Aisha</option>
+        <option value="Diego">Diego</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Date</label>
+      <input type="date" name="date" required>
+    </div>
+    <div class="form-row">
+      <label>Time</label>
+      <input type="time" name="time" required>
+    </div>
+    <div class="form-row">
+      <label>Location</label>
+      <input type="text" name="location" required placeholder="Street, City">
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Continue To Payment</button>
+    </div>
+  </form>
+</section>
+
+<section id="pricing" class="section">
+  <div class="section-head">
+    <h2>Pricing</h2>
+    <p>Transparent rates for premium service.</p>
+  </div>
+  <div class="cards">
+    <div class="card reveal">
+      <h3>Signature Cut</h3>
+      <p class="price">$40</p>
+    </div>
+    <div class="card reveal">
+      <h3>Grooming</h3>
+      <p class="price">$30</p>
+    </div>
+    <div class="card reveal">
+      <h3>Kids</h3>
+      <p class="price">$25</p>
+    </div>
+    <div class="card reveal">
+      <h3>Home Visit</h3>
+      <p class="price">$15 travel + service</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <div class="section-head">
+    <h2>Gallery</h2>
+    <p>Spaces for images where barbers are barbing hair.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="image-slot large reveal"></div>
+    <div class="image-slot reveal"></div>
+    <div class="image-slot reveal"></div>
+    <div class="image-slot reveal"></div>
+    <div class="image-slot reveal"></div>
+    <div class="image-slot reveal"></div>
+  </div>
+</section>
+
+<section id="why" class="section">
+  <div class="section-head">
+    <h2>Why Call N'Barb</h2>
+    <p>Why keep a bushy hair when you could just book a Call N'Barb.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <h3>On-Demand</h3>
+      <p>Book in seconds. We arrive on time.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3>Top Talent</h3>
+      <p>Screened pros with verified craft.</p>
+    </div>
+    <div class="why-card reveal">
+      <h3>Luxury Experience</h3>
+      <p>From towel service to premium products.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="section-head">
+    <h2>Contact</h2>
+    <p>Reach us anytime.</p>
+  </div>
+  <div class="contact-actions">
+    <a class="btn btn-outline" href="tel:+15555555555">Call</a>
+    <a class="btn btn-outline" href="mailto:hello@callnbarb.com">Email</a>
+    <a class="btn btn-outline" href="#book">Book Now</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-brand">
+    <img src="Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="footer-logo">
+    <span>Call N'Barb</span>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Support</a>
+    <a href="#" target="_blank" rel="noopener">Instagram</a>
+    <a href="#" target="_blank" rel="noopener">Twitter</a>
+  </div>
+  <div class="footer-legal">
+    <a href="#" aria-label="Privacy Policy">Privacy</a>
+    <a href="#" aria-label="Terms of Service">Terms</a>
+  </div>
+</footer>
+
+<div id="paymentModal" class="modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <button class="modal-close" aria-label="Close">×</button>
+    <h3>Payment</h3>
+    <form id="paymentForm" class="form">
+      <div class="form-row">
+        <label>Cardholder Name</label>
+        <input type="text" name="card_name" required placeholder="Name on card">
+      </div>
+      <div class="form-row">
+        <label>Card Number</label>
+        <input type="text" name="card_number" inputmode="numeric" maxlength="19" required placeholder="1234 5678 9012 3456">
+      </div>
+      <div class="form-row two">
+        <div>
+          <label>Expiry</label>
+          <input type="text" name="expiry" inputmode="numeric" maxlength="5" required placeholder="MM/YY">
+        </div>
+        <div>
+          <label>CVV</label>
+          <input type="password" name="cvv" inputmode="numeric" maxlength="4" required placeholder="•••">
+        </div>
+      </div>
+      <div class="wallets">
+        <button type="button" class="wallet apple">Apple Pay</button>
+        <button type="button" class="wallet google">Google Pay</button>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Pay Now</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
