@@ -62,6 +62,9 @@ body {
 .hero-visual { 
   background-image: url(./Call/Screenshot_20251206_215953_Google.jpg);
 }
+/* Flexible media */
+img, video { max-width: 100%; height: auto; }
+.hero-image { width: 100%; max-width: 420px; height: auto; display: block; margin: 0 auto; }
 
 .section { padding: 3rem 1.2rem; }
 .section-head { max-width: 900px; margin: 0 auto 1.6rem; text-align: center; }
@@ -105,6 +108,15 @@ body {
 .footer-links a, .footer-legal a { color: var(--muted); text-decoration: none; }
 .footer-links a:hover, .footer-legal a:hover { color: var(--text); }
 
+.social-links { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+.social-link { display: inline-flex; align-items: center; gap: .5rem; }
+.social-icon { width: 22px; height: 22px; }
+.instagram .social-icon { color: #e1306c; }
+.twitter .social-icon { color: #1da1f2; }
+.tiktok .social-icon { color: #ffffff; }
+.tiktok .accent1 { fill: #ff0050; }
+.tiktok .accent2 { fill: #00f2ea; }
+
 .modal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); z-index: 100; }
 .modal[aria-hidden="false"] { display: grid; }
 .modal-dialog { width: 96%; max-width: 520px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.06); background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); padding: 1.2rem; animation: rise .35s ease; }
@@ -127,6 +139,12 @@ body {
 
 @media (max-width: 899px) {
   .hero { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+@media (max-width: 560px) {
+  .site-header { grid-template-columns: 1fr auto; }
+  .cta { display: none; }
+  .section { padding: 2rem 1rem; }
 }
 
 .typing { position: relative; }
