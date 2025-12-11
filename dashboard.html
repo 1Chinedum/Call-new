@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barber Dashboard • Call N'Barb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="brand-logo">
+      <span class="brand-name">Call N'Barb</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#book" class="cta">Book Now</a>
+  </header>
+
+  <main class="section">
+    <div class="section-head">
+      <h2>Dashboard</h2>
+      <p>Your assigned bookings.</p>
+    </div>
+
+    <div id="portalDash" class="dashboard">
+      <div class="dash-head">
+        <h3 id="dashWelcome"></h3>
+        <div class="dash-actions">
+          <button id="portalLogoutBtn" class="btn btn-outline" type="button">Logout</button>
+        </div>
+      </div>
+      <div class="orders">
+        <h4>Your Orders</h4>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Phone</th>
+                <th>Service</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="ordersBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

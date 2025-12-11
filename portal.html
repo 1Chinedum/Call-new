@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barbers Portal • Call N'Barb</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="brand-logo">
+      <span class="brand-name">Call N'Barb</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation">☰</button>
+    <nav class="nav">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#book" class="cta">Book Now</a>
+  </header>
+
+  <main class="portal-shell">
+    <section class="portal-left">
+      <div class="portal-left-inner">
+        <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb" class="portal-left-logo">
+        <h1 class="portal-title">Welcome to Call N'Barb</h1>
+        <p class="portal-sub">Login to access your account</p>
+        <!--
+        <div class="portal-illustration">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="40" y="30" width="150" height="240" rx="18" fill="#111" stroke="#222" stroke-width="2" />
+            <rect x="60" y="60" width="110" height="40" rx="8" fill="#1f232b" />
+            <rect x="210" y="120" width="160" height="100" rx="14" fill="#222" stroke="#333" stroke-width="2" />
+            <rect x="230" y="150" width="120" height="22" rx="6" fill="#ffb54c" />
+            <circle cx="300" cy="200" r="10" fill="#00d1b2" />
+          </svg>
+        </div>
+        -->
+      </div>
+    </section>
+
+    <section class="portal-right">
+      <div class="login-card" id="portalLogin">
+        <div class="login-card-head">
+          <div class="avatar">👤</div>
+          <div class="login-card-title">
+            <h3>Welcome back</h3>
+            <p>Please confirm your PIN to access your account.</p>
+          </div>
+        </div>
+
+        <div class="form-row portal-form-row">
+          <label>Barber Name</label>
+          <input id="portalName" class="portal-input" type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="pin-grid" id="portalPin">
+          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
+          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
+          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
+          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
+          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
+          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
+        </div>
+
+        <div class="form-actions">
+          <button id="portalLoginBtn" class="btn btn-primary" type="button">Submit</button>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+  <div class="footer-brand">
+    <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="footer-logo">
+    <span>Call N'Barb</span>
+  </div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#gallery">Gallery</a>
+  </div>
+  <div class="footer-legal">
+    <a href="#" aria-label="Privacy Policy">Privacy & Terms.</a>
+   
+  </div>
+</footer>
+
+  <script src="portal.js"></script>
+</body>
+</html>
