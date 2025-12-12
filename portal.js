@@ -12,19 +12,26 @@ function renderView() {
 }
 
 portalLoginBtn && portalLoginBtn.addEventListener('click', () => {
-  const name = portalName?.value || ''
-  const digits = [...(pinGrid?.querySelectorAll('.pin-input') || [])].map(i => (i.value || '').trim())
+  const name = (portalName?.value || '').trim()
+  if (!name) {
+    alert('Please enter your name')
+    portalName?.focus()
+    return
+  }
+  const inputs = [...(pinGrid?.querySelectorAll('.pin-input') || [])]
+  const digits = inputs.map(i => (i.value || '').trim())
   const pass = digits.join('')
-  if (!name || digits.some(d => !d)) return
+  if (digits.some(d => !d)) {
+    const idx = digits.findIndex(d => !d)
+    if (idx >= 0) inputs[idx].focus()
+    alert('Enter 6-digit PIN')
+    return
+  }
   if (pass !== DEFAULT_PASSWORD) { alert('Incorrect password'); return }
   localStorage.setItem('barberUser', JSON.stringify({ name }))
   window.location.href = 'dashboard.html'
 })
 
-portalLogoutBtn && portalLogoutBtn.addEventListener('click', () => {
-  localStorage.removeItem('barberUser')
-  renderDash()
-})
 
 renderView()
 
@@ -41,6 +48,12 @@ renderView()
         if (e.key === 'Backspace' && !el.value && idx > 0) inputs[idx - 1].focus()
         if (e.key === 'Enter') portalLoginBtn?.click()
       })
+    })
+    portalName && portalName.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault()
+        inputs[0]?.focus()
+      }
     })
   }
 })()
