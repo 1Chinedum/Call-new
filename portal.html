@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body style="background-image: url(images/Screenshot\ 2025-12-11\ at\ 04.17.43.png);">
+  
   <header class="site-header">
     <a href="index.html" class="brand">
       <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="brand-logo">
@@ -22,14 +23,17 @@
     </nav>
     <a href="index.html#book" class="cta">Book Now</a>
   </header>
-
+  <!--
   <main class="portal-shell">
     <section class="portal-left">
       <div class="portal-left-inner">
-        <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb" class="portal-left-logo">
-        <h1 class="portal-title">Welcome to Call N'Barb</h1>
-        <p class="portal-sub">Login to access your account</p>
-        <!--
+        <div class="left-top">
+          <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb" class="portal-left-logo" loading="lazy" decoding="async">
+          <a href="index.html" class="back-link">Back to website →</a>
+        </div>
+        <h1 class="portal-title">Capturing Moments, Creating Memories</h1>
+        <p class="portal-sub">Join the Call N'Barb network or sign in to continue.</p>
+        
         <div class="portal-illustration">
           <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect x="40" y="30" width="150" height="240" rx="18" fill="#111" stroke="#222" stroke-width="2" />
@@ -44,38 +48,56 @@
     </section>
 
     <section class="portal-right">
-      <div class="login-card" id="portalLogin">
-        <div class="login-card-head">
-          <div class="avatar">👤</div>
-          <div class="login-card-title">
-            <h3>Welcome back</h3>
-            <p>Please confirm your PIN to access your account.</p>
+      <div class="login-card" id="authCard">
+        <div class="img"><img src="images/Screenshot_20251206_215953_Google.jpg" alt="" style="border-radius: 1000px; width: 100px;"></div>
+        <div class="auth-head">
+          <h2 style="text-align: center; color: beige;">Welcome Barber <br>Login to access your Dashboard</h2>
+        </div>
+<!--
+        <form id="signupForm" class="form">
+          <div class="form-row two">
+            <input id="firstName" class="portal-input" type="text" placeholder="First name" required>
+            <input id="lastName" class="portal-input" type="text" placeholder="Last name" required>
           </div>
-        </div>
-
-        <div class="form-row portal-form-row">
-          <label>Barber Name</label>
-          <input id="portalName" class="portal-input" type="text" placeholder="Enter your name" required>
-        </div>
-
-        <div class="pin-grid" id="portalPin">
-          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
-          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
-          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
-          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
-          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
-          <input class="pin-input" type="password" inputmode="numeric" maxlength="1" autocomplete="off" placeholder="•">
-        </div>
-
-        <div class="form-actions">
-          <button id="portalLoginBtn" class="btn btn-primary" type="button">Submit</button>
-        </div>
+          <div class="form-row">
+            <input id="email" class="portal-input" type="email" placeholder="Email" required>
+          </div>
+          <div class="form-row input-wrap">
+            <input id="password" class="portal-input" type="password" placeholder="Enter your password" required>
+            <button type="button" class="input-eye" id="toggleSignupPass" aria-label="Show password">👁</button>
+          </div>
+          <div class="form-row">
+            <label class="check-inline"><input type="checkbox" id="agree" required> I agree to the <a href="#" target="_blank">Terms & Conditions</a></label>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Create account</button>
+          </div>
+          <div class="divider"><span>Or register with</span></div>
+          <div class="social-auth">
+            <button type="button" class="btn btn-outline google">Google</button>
+            <button type="button" class="btn btn-outline apple">Apple</button>
+          </div>
+        </form>
+-->
+        <form id="loginForm" class="form" hidden>
+         
+          <div class="form-row">
+            <input id="loginName" class="portal-input" type="text" placeholder="Barber Name" required>
+          </div>
+          <div class="form-row input-wrap">
+            <input id="loginPassword" class="portal-input" type="password" placeholder="Enter your password" required>
+            <button type="button" class="input-eye" id="toggleLoginPass" aria-label="Show password">👁</button>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">Sign in</button>
+          </div>
+        </form>
       </div>
     </section>
   </main>
 <footer class="site-footer">
   <div class="footer-brand">
-    <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="footer-logo">
+    <img src="images/Screenshot_20251206_215953_Google.jpg" alt="Call N'Barb logo" class="footer-logo" loading="lazy" decoding="async">
     <span>Call N'Barb</span>
   </div>
   <div class="footer-links">

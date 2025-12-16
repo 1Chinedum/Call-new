@@ -199,25 +199,28 @@ img, video { max-width: 100%; height: auto; }
   radial-gradient(1200px 600px at 50% -20%, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); }
 .login-panel { max-width: 520px; width: 100%; background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 1.2rem; backdrop-filter: blur(8px); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
 .login-panel .form-actions { justify-content: flex-end; }
-.portal-shell { display: grid; grid-template-columns: 480px 1fr; min-height: 100vh; }
-.portal-left { background; color: #fff; display: grid; place-items: center; padding: 2rem; }
-.portal-left-inner { max-width: 420px; color: #fff; text-align: left; }
+.portal-shell { display: grid; grid-template-columns: clamp(280px, 30vw, 520px) 1fr; min-height: 100vh; }
+.portal-left { background:
+  url('images/Screenshot_20251206_215953_Google.jpg') center/cover no-repeat,
+  radial-gradient(800px 400px at 20% 10%, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); color: #fff; display: grid; place-items: center; padding: clamp(1.2rem, 3vw, 2rem); }
+.portal-left-inner { max-width: 560px; color: #fff; text-align: left; }
+.left-top { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
+.back-link { display: inline-flex; align-items: center; gap: .3rem; padding: .45rem .7rem; border-radius: 999px; background: rgba(0,0,0,0.35); color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.18); font-weight: 700; }
 .portal-left-logo { width: 64px; height: 64px; border-radius: 12px; margin-bottom: 1rem; }
 .portal-left h1 { font-size: 2rem; line-height: 1.2; margin: .2rem 0 .6rem; }
 .portal-left p { opacity: .8; }
 
-.portal-right { display: grid; place-items: center; padding: 3rem; min-height: 100vh; background:
-  linear-gradient(180deg, rgba(11,12,15,0.92), rgba(11,12,15,0.92)),
-  url('https://images.unsplash.com/photo-1519415943484-9fa75f3c8c64?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; }
-.login-card { position: relative; width: 840px; max-width: 96vw; background: #0f1116; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); padding: 1.4rem 1.4rem 1.6rem; backdrop-filter: blur(6px); }
+.portal-right { display: grid; place-items: center; padding: clamp(1.6rem, 4vw, 3rem); min-height: 100vh; background:
+  radial-gradient(1200px 600px at 60% -20%, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); }
+.login-card { position: relative; width: clamp(320px, 90vw, 840px); max-width: 100%; background: #0f1116; border-radius: 16px; box-shadow: 0 18px 40px rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); padding: clamp(1rem, 2.2vw, 1.6rem); backdrop-filter: blur(6px); }
 .login-card:before { content: ""; position: absolute; inset: 0; border-radius: 16px; padding: 1px; background: linear-gradient(90deg, rgba(231,180,22,0.35), rgba(0,209,178,0.25)); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
 .login-card-head { display: grid; grid-template-columns: 64px 1fr; gap: .8rem; align-items: center; margin-bottom: 1rem; }
 .avatar { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: #111; color: #ffce63; font-size: 28px; }
 .login-card-title h3 { margin: 0; }
 .login-card-title p { margin: .2rem 0 0; color: var(--muted); }
 
-.pin-grid { display: grid; grid-template-columns: repeat(6, 68px); gap: .9rem; margin: 1.2rem 0; }
-.pin-input { width: 68px; height: 68px; text-align: center; font-size: 28px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); outline: none; background: rgba(255,255,255,0.06); color: var(--text); font-weight: 800; }
+.pin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(52px, 1fr)); gap: .9rem; margin: 1.2rem 0; max-width: 460px; }
+.pin-input { width: 100%; max-width: 68px; height: clamp(52px, 12vw, 68px); text-align: center; font-size: clamp(22px, 6vw, 28px); border-radius: 14px; border: 1px solid rgba(255,255,255,0.12); outline: none; background: rgba(255,255,255,0.06); color: var(--text); font-weight: 800; }
 .pin-input::placeholder { color: #aaa; }
 .pin-input:focus { border-color: var(--primary); box-shadow: 0 0 0 6px var(--ring); }
 
@@ -225,7 +228,7 @@ img, video { max-width: 100%; height: auto; }
 .portal-pass:focus { box-shadow: 0 0 0 4px rgba(255,181,76,0.25); border-color: #ffb54c; }
 
 .login-card .form-actions { justify-content: flex-end; }
-.login-card .btn-primary { background: #ffb54c; color: #111; border-color: #ffb54c; }
+.login-card .btn-primary { background: linear-gradient(180deg, #9b7bff, #7c4dff); color: #fff; border-color: transparent; }
 
 .portal-form-row label { color: #333; font-weight: 700; }
 .portal-select { width: 100%; padding: .9rem 1rem; border-radius: 12px; border: 2px solid #e6e6e6; background: #fff; color: #111; outline: none; }
@@ -236,3 +239,21 @@ img, video { max-width: 100%; height: auto; }
 .portal-sub { color: #f0f3f8; opacity: .9; font-weight: 600; }
 .portal-illustration { margin-top: 1.2rem; }
 .portal-illustration svg { width: 100%; max-width: 380px; height: auto; display: block; }
+
+.auth-head h2 { margin: 0 0 .2rem; font-size: clamp(1.4rem, 3vw, 2rem); }
+.auth-head p { margin: 0 0 1rem; color: var(--muted); }
+.auth-head.small h2 { margin-top: .4rem; }
+.link { background: none; border: none; color: #9b7bff; font-weight: 800; cursor: pointer; text-decoration: underline; }
+.input-wrap { position: relative; }
+.input-eye { position: absolute; right: .6rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1rem; }
+.divider { position: relative; display: grid; place-items: center; color: var(--muted); font-weight: 700; margin: 1rem 0; }
+.divider span { background: #0f1116; padding: 0 .6rem; }
+.divider::before, .divider::after { content: ""; height: 1px; background: rgba(255,255,255,0.12); }
+.divider { grid-template-columns: 1fr auto 1fr; }
+.social-auth { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.btn-outline.google { border-color: rgba(255,255,255,0.12); }
+.btn-outline.apple { border-color: rgba(255,255,255,0.12); }
+
+@media (min-width: 1200px) {
+  .portal-shell { grid-template-columns: clamp(320px, 28vw, 560px) 1fr; }
+}

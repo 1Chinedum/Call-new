@@ -1,8 +1,9 @@
-const portalLogin = document.getElementById('portalLogin')
-const portalLoginBtn = document.getElementById('portalLoginBtn')
-const portalName = document.getElementById('portalName')
-const pinGrid = document.getElementById('portalPin')
-const DEFAULT_PASSWORD = '123456'
+const showLogin = document.getElementById('showLogin')
+const showSignup = document.getElementById('showSignup')
+const signupForm = document.getElementById('signupForm')
+const loginForm = document.getElementById('loginForm')
+const toggleSignupPass = document.getElementById('toggleSignupPass')
+const toggleLoginPass = document.getElementById('toggleLoginPass')
 
 function renderView() {
   const user = JSON.parse(localStorage.getItem('barberUser') || 'null')
@@ -11,52 +12,66 @@ function renderView() {
   }
 }
 
-portalLoginBtn && portalLoginBtn.addEventListener('click', () => {
-  const name = (portalName?.value || '').trim()
-  if (!name) {
-    alert('Please enter your name')
-    portalName?.focus()
+function getAccounts() {
+  return JSON.parse(localStorage.getItem('barberAccounts') || '[]')
+}
+
+function setAccounts(list) {
+  localStorage.setItem('barberAccounts', JSON.stringify(list))
+}
+
+showLogin && showLogin.addEventListener('click', () => {
+  signupForm?.setAttribute('hidden', '')
+  loginForm?.removeAttribute('hidden')
+})
+
+showSignup && showSignup.addEventListener('click', () => {
+  loginForm?.setAttribute('hidden', '')
+  signupForm?.removeAttribute('hidden')
+})
+
+toggleSignupPass && toggleSignupPass.addEventListener('click', () => {
+  const input = document.getElementById('password')
+  if (!input) return
+  input.type = input.type === 'password' ? 'text' : 'password'
+})
+
+toggleLoginPass && toggleLoginPass.addEventListener('click', () => {
+  const input = document.getElementById('loginPassword')
+  if (!input) return
+  input.type = input.type === 'password' ? 'text' : 'password'
+})
+
+signupForm && signupForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const first = document.getElementById('firstName')?.value.trim() || ''
+  const last = document.getElementById('lastName')?.value.trim() || ''
+  const email = document.getElementById('email')?.value.trim().toLowerCase() || ''
+  const password = document.getElementById('password')?.value || ''
+  const agree = document.getElementById('agree')?.checked
+  if (!first || !last || !email || !password || !agree) {
+    alert('Please complete all fields and accept the terms')
     return
   }
-  const inputs = [...(pinGrid?.querySelectorAll('.pin-input') || [])]
-  const digits = inputs.map(i => (i.value || '').trim())
-  const pass = digits.join('')
-  if (digits.some(d => !d)) {
-    const idx = digits.findIndex(d => !d)
-    if (idx >= 0) inputs[idx].focus()
-    alert('Enter 6-digit PIN')
-    return
-  }
-  if (pass !== DEFAULT_PASSWORD) { alert('Incorrect password'); return }
+  const accounts = getAccounts()
+  if (accounts.some(a => a.email === email)) { alert('An account with this email already exists'); return }
+  accounts.push({ email, password, name: `${first} ${last}` })
+  setAccounts(accounts)
+  localStorage.setItem('barberUser', JSON.stringify({ name: `${first} ${last}`, email }))
+  window.location.href = 'dashboard.html'
+})
+
+loginForm && loginForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const name = document.getElementById('loginName')?.value.trim() || ''
+  const password = document.getElementById('loginPassword')?.value || ''
+  if (!name) { alert('Please enter your name'); return }
+  if (password !== '123456') { alert('Incorrect password'); return }
   localStorage.setItem('barberUser', JSON.stringify({ name }))
   window.location.href = 'dashboard.html'
 })
 
-
 renderView()
-
-;(function setupInputs() {
-  if (pinGrid) {
-    const inputs = [...pinGrid.querySelectorAll('.pin-input')]
-    inputs.forEach((el, idx) => {
-      el.addEventListener('input', () => {
-        const v = el.value.replace(/\D/g, '')
-        el.value = v.slice(0, 1)
-        if (el.value && idx < inputs.length - 1) inputs[idx + 1].focus()
-      })
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Backspace' && !el.value && idx > 0) inputs[idx - 1].focus()
-        if (e.key === 'Enter') portalLoginBtn?.click()
-      })
-    })
-    portalName && portalName.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault()
-        inputs[0]?.focus()
-      }
-    })
-  }
-})()
 
 ;(function animateIn() {
   const els = document.querySelectorAll('.reveal')
